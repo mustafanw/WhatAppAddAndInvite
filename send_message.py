@@ -16,7 +16,7 @@ print ('Whatsapp Sending message started')
 
 db = pymysql.connect("remotemysql.com","oCtHbs37t9","Ifvu2JOuDf","oCtHbs37t9",charset='utf8' )
 cursor = db.cursor()
-sql_read = "select phone_number from whatsapp_users where message_sent='false' order by id limit 20;"
+sql_read = "select phone_number from whatsapp_users where message_sent='false' order by id DESC limit 20;"
 cursor.execute(sql_read)
 rows = cursor.fetchall()
 
