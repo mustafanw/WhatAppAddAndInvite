@@ -1,0 +1,1 @@
+worker: python add_whatsapp_users.py --log-file -
