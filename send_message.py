@@ -85,9 +85,10 @@ for index, number in enumerate(phones):
     url = "https://web.whatsapp.com/send?phone=91" + number + "&text=" + msg
     driver.get(url)
     driver.implicitly_wait(5)
-    sleep(3)  # any delay is okay, even 0, but 3-5 seems appropriate
+    # sleep(3)  # any delay is okay, even 0, but 3-5 seems appropriate
     # for i in range(TRIES):
     try:
+
         button = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='main']/footer/div/div[2]/div/div[2]/button/span")))
         driver.implicitly_wait(10)
         sleep(10)
@@ -96,9 +97,10 @@ for index, number in enumerate(phones):
         # driver.find_element_by_css_selector(css_selector).send_keys(Keys.RETURN)
         driver.execute_script("window.onbeforeunload = function() {};")
         print (f'Sent to {index}  : {number}')
-        update_sql = "UPDATE whatsapp_users SET message_sent = 'true' WHERE phone_number = {0}".format(number)
+        update_sql = "UPDATE whatsapp_users SET message_sent = 'true' WHERE phone_number = {0}".format(str(number))
         cursor.execute(update_sql)
         db.commit()
+
         
         
     except Exception as ex:
