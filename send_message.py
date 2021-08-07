@@ -97,7 +97,7 @@ for index, number in enumerate(phones):
         # driver.find_element_by_css_selector(css_selector).send_keys(Keys.RETURN)
         driver.execute_script("window.onbeforeunload = function() {};")
         print (f'Sent to {index}  : {number}')
-        update_sql = "UPDATE whatsapp_users SET message_sent = 'true' WHERE phone_number = {0}".format(str(number))
+        update_sql = "UPDATE whatsapp_users SET message_sent = 'true' WHERE phone_number = '{0}'".format(str(number))
         cursor.execute(update_sql)
         db.commit()
 
