@@ -19,7 +19,8 @@ cursor = db.cursor()
 sql_read = "select phone_number from whatsapp_users where message_sent='false' order by id DESC limit 20;"
 cursor.execute(sql_read)
 rows = cursor.fetchall()
-
+db.close()
+cursor.close()
 print ('Database Connected')
 
 phones=list()
@@ -88,7 +89,8 @@ for index, number in enumerate(phones):
     # sleep(3)  # any delay is okay, even 0, but 3-5 seems appropriate
     # for i in range(TRIES):
     try:
-
+        db = pymysql.connect("remotemysql.com","oCtHbs37t9","Ifvu2JOuDf","oCtHbs37t9",charset='utf8' )
+        cursor = db.cursor()
         button = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='main']/footer/div/div[2]/div/div[2]/button/span")))
         driver.implicitly_wait(10)
         sleep(10)
@@ -100,6 +102,8 @@ for index, number in enumerate(phones):
         update_sql = "UPDATE whatsapp_users SET message_sent = 'true' WHERE phone_number = '{0}'".format(str(number))
         cursor.execute(update_sql)
         db.commit()
+        db.close()
+        cursor.close()
 
         
         
