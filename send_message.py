@@ -58,7 +58,7 @@ user_data = os.path.join(BASE_DIR, "User_Data")
 # driver = webdriver.Chrome(executable_path=execute_path,options=options)
 # wait = WebDriverWait(driver, 10)
 mode='server'
-if mode=='server':
+if mode=='local':
     options = Options()
     options = webdriver.ChromeOptions()
     # options.headless = True
