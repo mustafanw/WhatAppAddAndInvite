@@ -67,8 +67,8 @@ if mode=='local':
 else:
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
-    #options.add_argument("--disable-dev-shm-usage")
-    #options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--no-sandbox")
     options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     execute_path=os.environ.get("CHROMEDRIVER_PATH")
 options.add_argument('--user-data-dir='+user_data)#D:\\Projects\\whatsapp\\whatsapp_automation\\User_Data')
