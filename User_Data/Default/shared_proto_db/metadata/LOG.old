@@ -1,2 +1,3 @@
-2021/08/16-19:15:16.814 1f88 Creating DB d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\shared_proto_db\metadata since it was missing.
-2021/08/16-19:15:16.824 1f88 Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\shared_proto_db\metadata/MANIFEST-000001
+2021/08/19-00:26:37.489 2650 Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\shared_proto_db\metadata/MANIFEST-000001
+2021/08/19-00:26:37.490 2650 Recovering log #3
+2021/08/19-00:26:37.492 2650 Reusing old log d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\shared_proto_db\metadata/000003.log 

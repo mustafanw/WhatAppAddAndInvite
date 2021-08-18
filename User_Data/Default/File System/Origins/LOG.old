@@ -1,2 +1,3 @@
-2021/08/16-19:15:21.016 4224 Creating DB d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\File System\Origins since it was missing.
-2021/08/16-19:15:21.025 4224 Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\File System\Origins/MANIFEST-000001
+2021/08/19-00:32:23.727 432c Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\File System\Origins/MANIFEST-000001
+2021/08/19-00:32:23.729 432c Recovering log #3
+2021/08/19-00:32:23.731 432c Reusing old log d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\File System\Origins/000003.log 

@@ -16,7 +16,7 @@ print ('Whatsapp Sending message started')
 
 db = pymysql.connect("remotemysql.com","oCtHbs37t9","Ifvu2JOuDf","oCtHbs37t9",charset='utf8' )
 cursor = db.cursor()
-sql_read = "select phone_number from whatsapp_users where message_sent='false' order by id DESC limit 20;"
+sql_read = "select phone_number from whatsapp_users where message_sent='false' order by id ASC limit 20;"
 cursor.execute(sql_read)
 rows = cursor.fetchall()
 db.close()
@@ -82,31 +82,27 @@ msg = quote(msg)  # url-encode the message, use other functios for handling dict
 # sleep(2)
 failed_list = []
 for index, number in enumerate(phones):
-    print (f'Opening whatsapp phone url {index} and {number}')
-    url = "https://web.whatsapp.com/send?phone=91" + number + "&text=" + msg
-    driver.get(url)
-    driver.implicitly_wait(5)
-    # sleep(3)  # any delay is okay, even 0, but 3-5 seems appropriate
-    # for i in range(TRIES):
     try:
         db = pymysql.connect("remotemysql.com","oCtHbs37t9","Ifvu2JOuDf","oCtHbs37t9",charset='utf8' )
         cursor = db.cursor()
+        update_sql = "UPDATE whatsapp_users SET message_sent = 'temp' WHERE phone_number = '{0}'".format(str(number))
+        cursor.execute(update_sql)
+        db.commit()    
+        print (f'Opening whatsapp phone url {index} and {number}')
+        url = "https://web.whatsapp.com/send?phone=91" + number + "&text=" + msg
+        driver.get(url)
+        driver.implicitly_wait(5)
+    # try:
+        
         button = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='main']/footer/div/div[2]/div/div[2]/button/span")))
         driver.implicitly_wait(10)
         sleep(10)
         button.click()        
-        # driver.find_element_by_xpath("//div[@id='main']/footer/div/div[3]/button/span").click()
-        # driver.find_element_by_css_selector(css_selector).send_keys(Keys.RETURN)
         driver.execute_script("window.onbeforeunload = function() {};")
         print (f'Sent to {index}  : {number}')
         update_sql = "UPDATE whatsapp_users SET message_sent = 'true' WHERE phone_number = '{0}'".format(str(number))
         cursor.execute(update_sql)
-        db.commit()
-        db.close()
-        cursor.close()
-
-        
-        
+        db.commit()            
     except Exception as ex:
         print("not yet")
         print(str(ex))
@@ -115,9 +111,17 @@ for index, number in enumerate(phones):
         print (f'Unable to Sent to {index}  : {number}')
         sleep(1)
         failed_list.append(number)
+
+        db = pymysql.connect("remotemysql.com","oCtHbs37t9","Ifvu2JOuDf","oCtHbs37t9",charset='utf8' )
+        cursor = db.cursor()
+        update_sql = "UPDATE whatsapp_users SET message_sent = 'error' WHERE phone_number = '{0}'".format(str(number))
+        cursor.execute(update_sql)
+        db.commit()
+    finally:
+        db.close()
+        cursor.close()
         
-    # else:
-    #     failed_list.append(number)
+    
     
 print ("Done")
 

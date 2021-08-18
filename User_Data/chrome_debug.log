@@ -1,3 +1,2 @@
-[7192:11344:0817/002036.805:INFO:CONSOLE(0)] "Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: chrome://resources/roboto/roboto-regular.woff2", source: chrome://new-tab-page/ (0)
-[7192:11344:0817/002042.018:ERROR:device_event_log_impl.cc(214)] [00:20:42.018] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
-[7192:11344:0817/002042.019:ERROR:device_event_log_impl.cc(214)] [00:20:42.019] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+[4100:548:0819/003311.408:ERROR:device_event_log_impl.cc(214)] [00:33:11.407] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+[4100:548:0819/003311.415:ERROR:device_event_log_impl.cc(214)] [00:33:11.414] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
