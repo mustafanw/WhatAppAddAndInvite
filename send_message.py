@@ -13,6 +13,10 @@ from selenium.webdriver.chrome.options import Options
 import pathlib
 
 import psycopg2
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+
+
 
 conn = psycopg2.connect(host="ec2-23-20-208-173.compute-1.amazonaws.com",
                             port="5432",
@@ -23,8 +27,6 @@ conn = psycopg2.connect(host="ec2-23-20-208-173.compute-1.amazonaws.com",
 print ('Whatsapp Sending message started')
 
 
-
-# db = pymysql.connect("remotemysql.com","oCtHbs37t9","Ifvu2JOuDf","oCtHbs37t9",charset='utf8' )
 cursor = conn.cursor()
 sql_read = "select phone_number from whatsapp_users where message_sent='false' order by id ASC limit 20;"
 cursor.execute(sql_read)
@@ -38,11 +40,6 @@ phones=list()
 for row in rows:
     phones.append(row[0])
 
-# %%from pyvirtualdisplay import Display
-# display = Display(visible=0, size=(800, 600))
-# display.start()
-
-#update css selector if you have any issues
 css_selector = "#main > footer > div._3ee1T._1LkpH.copyable-area > div._3uMse > div > div._3FRCZ.copyable-text.selectable-text"
 
 # message to be sent to everyone, you can also read it as a dict from a file with ph nos as keys
@@ -76,7 +73,8 @@ else:
 options.add_argument('--user-data-dir='+user_data)#D:\\Projects\\whatsapp\\whatsapp_automation\\User_Data')
 
 options.add_argument("user-agent=User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36")
-driver = webdriver.Chrome(executable_path=execute_path,options=options)
+# driver = webdriver.Chrome(executable_path=execute_path,options=options)
+driver = webdriver.Chrome(ChromeDriverManager().install())
 wait = WebDriverWait(driver, 600)
 
 msg = quote(msg)  # url-encode the message, use other functios for handling dictionaries, not recommended
@@ -100,7 +98,8 @@ for index, number in enumerate(phones):
         driver.implicitly_wait(5)
     # try:
         
-        button = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='main']/footer/div/div[2]/div/div[2]/button/span")))
+        # button = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='main']/footer/div/div[2]/div/div[2]/button/span")))
+        button = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='main']/footer/div/div/div/div[2]/div[2]/button/span")))
         driver.implicitly_wait(10)
         sleep(10)
         button.click()        
