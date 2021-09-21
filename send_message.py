@@ -61,7 +61,7 @@ Whatsapp: https://chat.whatsapp.com/G2BXApDo9FU3UrLaFmru5K
 BASE_DIR = pathlib.Path(__file__).parent.absolute()
 user_data = os.path.join(BASE_DIR, "User_Data")  
 
-mode='local'
+mode='server'
 if mode=='local':
     options = Options()
     options = webdriver.ChromeOptions()
