@@ -12,15 +12,26 @@ import pymysql
 from selenium.webdriver.chrome.options import Options
 import pathlib
 
+import psycopg2
+
+conn = psycopg2.connect(host="ec2-23-20-208-173.compute-1.amazonaws.com",
+                            port="5432",
+                            user="wtgfwfsrmdtsxf",
+                            password="7023c8b48035cf5f07a3a56b72e806e52cdbeb00228849038a4b4430cbfeb9b9",
+                            database="d3d94oi1klcln2",
+                            )
 print ('Whatsapp Sending message started')
 
-db = pymysql.connect("remotemysql.com","oCtHbs37t9","Ifvu2JOuDf","oCtHbs37t9",charset='utf8' )
-cursor = db.cursor()
+
+
+# db = pymysql.connect("remotemysql.com","oCtHbs37t9","Ifvu2JOuDf","oCtHbs37t9",charset='utf8' )
+cursor = conn.cursor()
 sql_read = "select phone_number from whatsapp_users where message_sent='false' order by id ASC limit 20;"
 cursor.execute(sql_read)
 rows = cursor.fetchall()
-db.close()
 cursor.close()
+conn.close()
+
 print ('Database Connected')
 
 phones=list()
@@ -49,20 +60,11 @@ Whatsapp: https://chat.whatsapp.com/G2BXApDo9FU3UrLaFmru5K
 '''   
 BASE_DIR = pathlib.Path(__file__).parent.absolute()
 user_data = os.path.join(BASE_DIR, "User_Data")  
-# execute_path=r"D:\Projects\whatsapp\chromedriver.exe"
 
-# options = webdriver.ChromeOptions()
-# options.add_argument("--headless")
-# options.add_argument('--user-data-dir=D:\\Projects\\whatsapp\\add_User_Data')#D:\\Projects\\whatsapp\\whatsapp_automation\\User_Data')
-# options.add_argument("user-agent=User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36")
-# driver = webdriver.Chrome(executable_path=execute_path,options=options)
-# wait = WebDriverWait(driver, 10)
-mode='server'
+mode='local'
 if mode=='local':
     options = Options()
     options = webdriver.ChromeOptions()
-    # options.headless = True
-    # execute_path=r"D:\Projects\whpip install chromedriver-binary-autoatsapp\whatsapp_automation\chromedriver.exe"
     execute_path=r"D:\Projects\chromedriver.exe"
 else:
     options = webdriver.ChromeOptions()
@@ -72,22 +74,26 @@ else:
     options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     execute_path=os.environ.get("CHROMEDRIVER_PATH")
 options.add_argument('--user-data-dir='+user_data)#D:\\Projects\\whatsapp\\whatsapp_automation\\User_Data')
-# options.add_argument('window-size=1200x600')    
+
 options.add_argument("user-agent=User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36")
 driver = webdriver.Chrome(executable_path=execute_path,options=options)
 wait = WebDriverWait(driver, 600)
 
 msg = quote(msg)  # url-encode the message, use other functios for handling dictionaries, not recommended
-# driver.get("https://web.whatsapp.com")  # first call without delay in order to scan qr code
-# sleep(2)
+
 failed_list = []
 for index, number in enumerate(phones):
     try:
-        db = pymysql.connect("remotemysql.com","oCtHbs37t9","Ifvu2JOuDf","oCtHbs37t9",charset='utf8' )
-        cursor = db.cursor()
+        conn = psycopg2.connect(host="ec2-23-20-208-173.compute-1.amazonaws.com",
+                            port="5432",
+                            user="wtgfwfsrmdtsxf",
+                            password="7023c8b48035cf5f07a3a56b72e806e52cdbeb00228849038a4b4430cbfeb9b9",
+                            database="d3d94oi1klcln2",
+                            )
+        cursor = conn.cursor()
         update_sql = "UPDATE whatsapp_users SET message_sent = 'temp' WHERE phone_number = '{0}'".format(str(number))
         cursor.execute(update_sql)
-        db.commit()    
+        conn.commit()    
         print (f'Opening whatsapp phone url {index} and {number}')
         url = "https://web.whatsapp.com/send?phone=91" + number + "&text=" + msg
         driver.get(url)
@@ -102,7 +108,7 @@ for index, number in enumerate(phones):
         print (f'Sent to {index}  : {number}')
         update_sql = "UPDATE whatsapp_users SET message_sent = 'true' WHERE phone_number = '{0}'".format(str(number))
         cursor.execute(update_sql)
-        db.commit()            
+        conn.commit()            
     except Exception as ex:
         print("not yet")
         print(str(ex))
@@ -112,13 +118,18 @@ for index, number in enumerate(phones):
         sleep(1)
         failed_list.append(number)
 
-        db = pymysql.connect("remotemysql.com","oCtHbs37t9","Ifvu2JOuDf","oCtHbs37t9",charset='utf8' )
-        cursor = db.cursor()
+        conn = psycopg2.connect(host="ec2-23-20-208-173.compute-1.amazonaws.com",
+                            port="5432",
+                            user="wtgfwfsrmdtsxf",
+                            password="7023c8b48035cf5f07a3a56b72e806e52cdbeb00228849038a4b4430cbfeb9b9",
+                            database="d3d94oi1klcln2",
+                            )
+        cursor = conn.cursor()
         update_sql = "UPDATE whatsapp_users SET message_sent = 'error' WHERE phone_number = '{0}'".format(str(number))
         cursor.execute(update_sql)
-        db.commit()
+        conn.commit()
     finally:
-        db.close()
+        conn.close()
         cursor.close()
         
     
