@@ -1,3 +1,2 @@
-2021/08/19-00:32:46.682 456c Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Site Characteristics Database/MANIFEST-000001
-2021/08/19-00:32:46.686 456c Recovering log #3
-2021/08/19-00:32:46.688 456c Reusing old log d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Site Characteristics Database/000003.log 
+2021/09/22-01:54:54.405 3664 Creating DB d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Site Characteristics Database since it was missing.
+2021/09/22-01:54:54.424 3664 Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Site Characteristics Database/MANIFEST-000001

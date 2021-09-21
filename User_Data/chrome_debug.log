@@ -1,2 +1,6 @@
-[16768:4480:0922/012014.564:ERROR:component_installer.cc(349)] Failed to read manifest or verify installation for OnDeviceHeadSuggest (d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\OnDeviceHeadSuggestModel\20210810.390846597).: The operation completed successfully. (0x0)
-[16768:15676:0922/012014.881:ERROR:backend_impl.cc(1044)] Critical error found -8
+[9008:1064:0922/015558.280:ERROR:device_event_log_impl.cc(214)] [01:55:58.280] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+[9008:1064:0922/015558.281:ERROR:device_event_log_impl.cc(214)] [01:55:58.281] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+[9008:1064:0922/015558.282:ERROR:device_event_log_impl.cc(214)] [01:55:58.282] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+[9008:1064:0922/015606.279:INFO:CONSOLE(1)] "Uncaught (in promise) TypeError: Failed to execute 'put' on 'Cache': Partial response (status code 206) is unsupported", source: https://web.whatsapp.com/serviceworker.js (1)
+[9008:1064:0922/015606.283:INFO:CONSOLE(1)] "Uncaught (in promise) TypeError: Failed to execute 'put' on 'Cache': Partial response (status code 206) is unsupported", source: https://web.whatsapp.com/serviceworker.js (1)
+[9008:1064:0922/015606.289:INFO:CONSOLE(1)] "Uncaught (in promise) TypeError: Failed to execute 'put' on 'Cache': Partial response (status code 206) is unsupported", source: https://web.whatsapp.com/serviceworker.js (1)
