@@ -13,8 +13,8 @@ from selenium.webdriver.chrome.options import Options
 import pathlib
 
 import psycopg2
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
+# from selenium import webdriver
+# from webdriver_manager.chrome import ChromeDriverManager
 
 
 
@@ -73,8 +73,8 @@ else:
 options.add_argument('--user-data-dir='+user_data)#D:\\Projects\\whatsapp\\whatsapp_automation\\User_Data')
 
 options.add_argument("user-agent=User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36")
-# driver = webdriver.Chrome(executable_path=execute_path,options=options)
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome(executable_path=execute_path,options=options)
+# driver = webdriver.Chrome(ChromeDriverManager().install())
 wait = WebDriverWait(driver, 600)
 
 msg = quote(msg)  # url-encode the message, use other functios for handling dictionaries, not recommended
