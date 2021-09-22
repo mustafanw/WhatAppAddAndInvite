@@ -1,3 +1,2 @@
-2021/09/22-01:55:50.525 710 Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Service Worker\Database/MANIFEST-000001
-2021/09/22-01:55:50.526 710 Recovering log #3
-2021/09/22-01:55:50.527 710 Reusing old log d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Service Worker\Database/000003.log 
+2021/09/22-12:23:32.746 1c38 Creating DB d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Service Worker\Database since it was missing.
+2021/09/22-12:23:32.757 1c38 Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Service Worker\Database/MANIFEST-000001

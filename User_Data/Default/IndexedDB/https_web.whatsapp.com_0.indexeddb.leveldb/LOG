@@ -1,3 +1,2 @@
-2021/09/22-01:55:54.281 2b04 Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2021/09/22-01:55:54.282 2b04 Recovering log #3
-2021/09/22-01:55:54.299 2b04 Reusing old log d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000003.log 
+2021/09/22-12:23:32.226 53c8 Creating DB d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb since it was missing.
+2021/09/22-12:23:32.235 53c8 Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
