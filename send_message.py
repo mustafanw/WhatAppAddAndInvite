@@ -45,6 +45,7 @@ css_selector = "#main > footer > div._3ee1T._1LkpH.copyable-area > div._3uMse > 
 # message to be sent to everyone, you can also read it as a dict from a file with ph nos as keys
 msg = '''
 *Musaira Deals India*
+*Big Billion Day - Loots & Offers*
 Join this group for everyday deals, sale and loots across multiple Online Shopping Websites.
 So no need to check multiple websites. Just join this group and you are good to go to grab all the latest deals.
 
