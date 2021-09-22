@@ -1,1 +1,1 @@
-worker: python add_whatsapp_users.py --log-file -
+worker: python send_message.py --log-file -
