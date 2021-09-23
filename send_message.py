@@ -28,7 +28,7 @@ print ('Whatsapp Sending message started')
 
 
 cursor = conn.cursor()
-sql_read = "select phone_number from whatsapp_users where message_sent='false';" # order by id ASC limit 20
+sql_read = "select phone_number from whatsapp_users where message_sent='false' order by id ASC limit 20;" # 
 cursor.execute(sql_read)
 rows = cursor.fetchall()
 cursor.close()

@@ -1,2 +1,3 @@
-2021/09/22-12:23:26.907 4048 Creating DB d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Sync Data\LevelDB since it was missing.
-2021/09/22-12:23:26.922 4048 Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Sync Data\LevelDB/MANIFEST-000001
+2021/09/24-00:00:08.262 245c Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Sync Data\LevelDB/MANIFEST-000001
+2021/09/24-00:00:08.262 245c Recovering log #3
+2021/09/24-00:00:08.263 245c Reusing old log d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Sync Data\LevelDB/000003.log 
