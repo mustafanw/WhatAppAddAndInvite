@@ -1,3 +1,2 @@
-2021/09/24-00:00:08.406 6234 Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Session Storage/MANIFEST-000001
-2021/09/24-00:00:08.436 6234 Recovering log #3
-2021/09/24-00:00:08.437 6234 Reusing old log d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Session Storage/000003.log 
+2021/09/28-22:27:05.477 6580 Creating DB d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Session Storage since it was missing.
+2021/09/28-22:27:05.488 6580 Reusing MANIFEST d:\Projects\whatsapp\WhatAppAddAndInvite\User_Data\Default\Session Storage/MANIFEST-000001
