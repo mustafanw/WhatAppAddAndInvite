@@ -46,13 +46,12 @@ css_selector = "#main > footer > div._3ee1T._1LkpH.copyable-area > div._3uMse > 
 msg = '''
 *Musaira Deals India*
 *Big Billion Day - Flipkart & Amazon Loots & Offers*
-Join this group for everyday deals, sale and loots across multiple Online Shopping Websites.
-So no need to check multiple websites. Just join this group to grab all the latest deals.
 
 *Weekly 500 Rs. Give Away Amazon Gift Cards.*
 
 Keep sharing & Support ❤️😊
-Whatsapp: https://chat.whatsapp.com/G2BXApDo9FU3UrLaFmru5K
+
+*Join Now* Whatsapp Group Link: https://chat.whatsapp.com/EENPV5xeCofL6nzznu6vzr
 
 *Save this number as Musaira Deals to enable above whatsapp group link*
 '''   
